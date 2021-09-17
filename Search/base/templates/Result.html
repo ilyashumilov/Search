@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Views</title>
+
+    <style>
+
+        .row {
+
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-top: 20px;
+            background-color: yellow;
+            width: 100%;
+        }
+
+        .table {
+            border-spacing: 10px 10px;
+            text-align: center;
+        }
+
+
+        .container1 {
+            position: absolute;
+            left: 50%;
+            top: 40%;
+            transform: translate(-50%, -50%);
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 20px;
+            background: #FEFEFE ;
+            font-size:110%;
+            text-align: center;
+            font-family:sans-serif;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class = container1>
+    <h1>Result</h1>
+    <table class="table" align="center">
+        
+
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+        </tr>
+        
+        {% for i in result %}
+        <tr class=row>
+            <td> {{ i.firstname }} </td>
+            <td> {{ i.lastname }} </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href = "{% url 'search' %}">Back</a>
+<div/>
+  
+</body>
+</html>
